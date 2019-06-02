@@ -1,4 +1,4 @@
-FROM adferrand/docker-backuppc
+FROM adferrand/backuppc
 
 LABEL maintainer="amacie"
 
