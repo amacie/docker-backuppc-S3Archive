@@ -4,10 +4,13 @@ LABEL maintainer="amacie"
 
 RUN pip install boto3
 
-RUN cd /usr/local/src/ \
+RUN mkdir /usr/local/src/ \
+&& cd /usr/local/src/ \
 && git clone git://github.com/rtucker/backuppc-archive-s3.git \
-&& ln -s /usr/local/src/backuppc-archive-s3/BackupPC_archiveHost_s3 /usr/share/backuppc/bin/
+&& ln -s /usr/local/src/backuppc-archive-s3/BackupPC_archiveHost_s3 /usr/local/BackupPC/bin
 
+RUN apk update && apk --no-cache add g++ \
+&& rm -rf /var/cache/apk/* \
 
 EXPOSE 8080
 
