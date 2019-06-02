@@ -2,7 +2,7 @@ FROM adferrand/backuppc
 
 LABEL maintainer="amacie"
 
-RUN apk --no-cache --update add boto
+RUN pip install boto3
 
 RUN cd /usr/local/src/ \
 && git clone git://github.com/rtucker/backuppc-archive-s3.git \
