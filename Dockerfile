@@ -17,7 +17,7 @@ RUN apk --no-cache --update add \
   && apk del build-dependencies \
   && echo $'\n\
 [watcher:syslogd]\n\
-cmd = /sbin/syslogd -O -\n\
+cmd = /sbin/syslogd -n -O -\n\
 \n\
 [watcher:crond]\n\
-cmd = /usr/sbin/crond' >> /etc/circus.ini
+cmd = /usr/sbin/crond -f' >> /etc/circus.ini
