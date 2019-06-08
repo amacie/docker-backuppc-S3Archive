@@ -16,8 +16,8 @@ RUN apk --no-cache --update add \
   && sed -i -e 's/^use lib "\/usr\/share\/backuppc\/lib/use lib "\/usr\/local\/BackupPC\/lib/g' /usr/local/src/backuppc-archive-s3/BackupPC_archiveStart \
   && apk del build-dependencies \
   && echo $'\n\
-  [watcher:syslogd]\n\
-  cmd = /sbin/syslogd -O -\n\
-  \n\
-  [watcher:crond]\n\
-  cmd = /usr/sbin/crond' > /etc/circus.ini
+[watcher:syslogd]\n\
+cmd = /sbin/syslogd -O -\n\
+\n\
+[watcher:crond]\n\
+cmd = /usr/sbin/crond' >> /etc/circus.ini
