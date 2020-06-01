@@ -5,7 +5,7 @@ LABEL maintainer="amacie"
 RUN apk --no-cache --update add \
     g++ \
     gnupg \
-    python \
+    python2 \
     py-boto \
   && apk --no-cache --update --virtual build-dependencies add git \ 
   && mkdir /usr/local/src/ \
