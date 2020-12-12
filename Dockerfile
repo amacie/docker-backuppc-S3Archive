@@ -19,7 +19,13 @@ RUN apk --no-cache --update add \
   && apk del build-dependencies \
   && echo $'\n\
 [watcher:syslogd]\n\
-cmd = /sbin/syslogd -n -O -\n\
+command = /sbin/syslogd -n -O -\n\
+redirect_stderr = true \n\
+stdout_logfile = /dev/stdout \n\
+stdout_logfile_maxbytes = 0 \n\
 \n\
 [watcher:crond]\n\
-cmd = /usr/sbin/crond -f' >> /etc/circus.ini
+command = /usr/sbin/crond -f \n\
+redirect_stderr = true \n\
+stdout_logfile = /dev/stdout \n\
+stdout_logfile_maxbytes = 0 \n\' >> /etc/supervisord.conf
