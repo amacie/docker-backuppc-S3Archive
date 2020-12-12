@@ -28,4 +28,4 @@ stdout_logfile_maxbytes = 0 \n\
 command = /usr/sbin/crond -f \n\
 redirect_stderr = true \n\
 stdout_logfile = /dev/stdout \n\
-stdout_logfile_maxbytes = 0 \n\' >> /etc/supervisord.conf
+stdout_logfile_maxbytes = 0' >> /etc/supervisord.conf
